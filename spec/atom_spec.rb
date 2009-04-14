@@ -76,7 +76,7 @@ describe "atom feed" do
     it "should link to the HTML version" do
       url = "http://example.org/articles/article-11"
       body.should have_tag(
-          "entry/link[@href=#{url}][@rel=alternate][@type=text/html]")
+          "entry/link[@href=#{url}][@rel='alternate'][@type='text/html']")
     end
     
     it "should define unique ID" do

@@ -51,11 +51,11 @@ describe "home page" do
   end
   
   it "should set description meta tag" do
-    body.should have_tag("meta[@name=description][@content=great web site]")
+    body.should have_tag("meta[@name='description'][@content='great web site']")
   end
   
   it "should set keywords meta tag" do
-    body.should have_tag("meta[@name=keywords][@content=home, page]")
+    body.should have_tag("meta[@name='keywords'][@content='home, page']")
   end
   
   it "should link to each category" do
@@ -109,11 +109,11 @@ describe "page with meta tags", :shared => true do
   include Sinatra::Test
 
   it "should set description meta tag" do
-    body.should have_tag("meta[@name=description][@content=#{@description}]")
+    body.should have_tag("meta[@name=description][@content='#{@description}']")
   end
   
   it "should set the keywords meta tag" do
-    body.should have_tag("meta[@name=keywords][@content=#{@keywords}]")
+    body.should have_tag("meta[@name=keywords][@content='#{@keywords}]'")
   end
 end
 
@@ -209,7 +209,7 @@ describe "article" do
     
     it "should display link to comment author's site" do
       body.should have_tag(
-          "ol//a[@href=#{@comment.author_url}][@rel=nofollow]",
+          "ol//a[@href='#{@comment.author_url}'][@rel='nofollow']",
           @comment.author)
     end
     
